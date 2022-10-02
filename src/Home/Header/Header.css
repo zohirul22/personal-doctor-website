@@ -1,0 +1,13 @@
+.header{
+    background-image: linear-gradient(90deg, rgb(244, 195, 195) 0%, 
+    lightgreen 50%, rgba(0, 0, 139, 0.738) 100%)
+}
+
+.nav-items{
+  
+    font-size: 18px;
+  
+    font-weight: bolder;
+    font-style: initial;
+
+}
