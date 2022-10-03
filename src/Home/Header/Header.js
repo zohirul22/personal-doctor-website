@@ -28,6 +28,16 @@ const Header = () => {
 
 
                             </NavDropdown>
+                            <NavDropdown
+                                className='text-dark'
+                                title="Treatment" id="collasible-nav-dropdown">
+                                <NavDropdown.Item as={Link} to="/about">About</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/contract">
+                                    Contract
+                                </NavDropdown.Item>
+
+
+                            </NavDropdown>
                         </Nav>
                         <Nav>
                             <Nav.Link href="#login">Login</Nav.Link>
