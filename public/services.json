@@ -1,0 +1,25 @@
+[
+    {
+     "id": 1,
+     "name":"Endoscopy",
+     "application":"Nulla lorem ipsum fringilla utenim id condimentum convallis ",
+     "img":"https://i.ibb.co/FzD8GJr/imgg-1.png"
+    },
+    {  "id": 2,
+    "name":"Colonscopy",
+    "application":"Suspendisse pulvinar sitamet leoeu feugiusce mattisleo lorem ",
+    "img":"https://i.ibb.co/z2knSBL/imggg-1.png"
+    },
+    {
+        "id": 3,
+     "name":"Acid Reflux",
+     "application":"Curabitur esterttitor velmaximus vita suscipit at massanac ",
+     "img":"https://i.ibb.co/cJvW9zw/1da6e0f29cf9b2ba9b8bc0cb08fb236f.png"
+    },
+    {
+        "id": 4,
+     "name":"Liver Disease",
+     "application":"Phasellus suscipit magnanon onese egestas rnarrabitur ",
+     "img":"https://i.ibb.co/hDnW0d5/imgggg-1.png"
+    }
+]

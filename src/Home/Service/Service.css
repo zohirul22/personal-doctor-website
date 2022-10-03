@@ -1,0 +1,21 @@
+.service{
+    border: 1px solid rgba(220, 220, 220, 0.618);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+
+.img-db{
+    border: 1px solid rgba(232, 225, 225, 0.209);
+    border-radius: 100%;
+}
+
+.img-db:hover{
+    background-color: rgba(200, 162, 235, 0.73);
+}
+.name{
+    color: cadetblue;
+}
+.name:hover{
+    color: blueviolet;
+}
