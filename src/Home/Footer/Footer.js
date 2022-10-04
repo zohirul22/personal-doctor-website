@@ -28,7 +28,7 @@ const Footer = () => {
                         <h2 className='text-light'>Subscribe Newsletter</h2>
                         <p>Subscribe to our newsletter to get the latest news right to your inbox.</p>
                         <input style={{ height: '50px' }} type="text" name="" id="" placeholder='Please submit..' />
-                        <button type="button" className="btn mt-2 p-2 btn-outline-danger text-light">Submitted</button>
+                        <button type="button" className="btn mt-2 p-2 btn-outline-success text-light">Submitted</button>
                     </div>
 
                 </div>

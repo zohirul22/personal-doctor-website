@@ -1,0 +1,11 @@
+p{
+    text-align: justify;
+}
+
+.vission-mission{
+    background-color: aliceblue;
+    padding: 20px;
+}
+.vission-mission:hover{
+    background-color: beige;
+}
