@@ -22,8 +22,8 @@ const About = () => {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3 className='text-info'>Who Is Doctor </h3>
-                            <p className='text-primary'>A doctor is someone who is experienced and certified to practice medicine to help maintain or restore physical and mental health. A doctor is tasked with interacting with patients, diagnosing medical problems and successfully treating illness or injury !!!...</p>
+                            <h3 className='text-info'>About Us </h3>
+                            <p className='text-primary'>We are the largest full-service gastroenterology group in India!!.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
