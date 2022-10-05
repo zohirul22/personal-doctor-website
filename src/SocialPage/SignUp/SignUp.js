@@ -1,34 +1,60 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { navigate, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import SocialPage from '../SocialPage/SocialPage';
 import './SignUp.css'
 
 const SignUp = () => {
-    const navigate = useNavigate();
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+ const navigate = useNavigate();
+
     const handelSubmittedLogin = () => {
         navigate('/login')
     }
+
+ 
+    const handelSignUp = async (event) => {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
+        console.log('Updated profile');
+        navigate('/home')
+    }
+
 
 
     return (
         <div className='signup'>
             <div className="mx-auto w-50 signup-from ">
                 <h1 className='text-center text-primary my-4'>Please Sign Up</h1>
-                <Form >
+                <Form onSubmit={handelSignUp}>
                     <Form.Group className="mb-3 w-75 mx-auto" controlId="formBasicEmail">
 
-                        <Form.Control type="text" placeholder="Enter name.." />
+                        <Form.Control type="text" name='name' placeholder="Enter name.." required />
 
                     </Form.Group>
 
                     <Form.Group className="mb-3 w-75 mx-auto" controlId="formBasicPassword">
 
-                        <Form.Control type="email" placeholder="Enter email.." />
+                        <Form.Control type="email" name='email' placeholder="Enter email.." required />
                     </Form.Group>
                     <Form.Group className="mb-3 w-75 mx-auto" controlId="formBasicPassword">
 
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password" name='password' placeholder="Password" required />
                     </Form.Group>
                     <Form.Group className="mb-3 w-75 mx-auto" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Check me out" />
@@ -39,9 +65,7 @@ const SignUp = () => {
                     <p className='text-center'>Already account ?
                         <span onClick={handelSubmittedLogin}
                             className='btn-navigate text-danger'>Please Login</span></p>
-                    <p className='text-center'>Forget Password?
-                        <span
-                            className='btn-navigate text-danger'>Reset Password</span></p>
+
                 </Form>
                 <SocialPage></SocialPage>
             </div>
