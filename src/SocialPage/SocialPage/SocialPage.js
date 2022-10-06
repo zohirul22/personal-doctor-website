@@ -49,7 +49,7 @@ const SocialPage = () => {
                 <button 
                 onClick={()=>signInWithGithub()}
                 type="button" 
-                className="btn btn-outline-primary  d-block mx-auto w-50 mb-2">
+                className="btn btn-outline-success  d-block mx-auto w-50 mb-2">
                     <img className='btn-img' src={github} alt="" /> <span>Github</span>
                 </button>
                 {/*github button */}

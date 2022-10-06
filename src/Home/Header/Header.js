@@ -3,11 +3,22 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Header.css'
 import logo from '../../../src/img/logo/logo.png'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import auth from '../../firebase.init';
 
 const Header = () => {
+
+    const [user] = useAuthState(auth);
+
+    const handelSignOut = () => {
+        signOut(auth)
+    }
+
+
     return (
         <div>
-            <Navbar className='header' sticky='top' collapseOnSelect expand="lg"  >
+            <Navbar collapseOnSelect expand="lg" className='header' variant="dark" sticky="top"  >
                 <Container>
                     <Navbar.Brand as={Link} to="/home">
                         <img src={logo} alt="" />
@@ -21,29 +32,24 @@ const Header = () => {
                             <NavDropdown
                                 className='text-dark'
                                 title="Details" id="collasible-nav-dropdown">
+
                                 <NavDropdown.Item as={Link} to="/about">About</NavDropdown.Item>
+
                                 <NavDropdown.Item as={Link} to="/contract">
                                     Contract
                                 </NavDropdown.Item>
 
 
                             </NavDropdown>
-                            <NavDropdown
-                                className='text-dark'
-                                title="Treatment" id="collasible-nav-dropdown">
-                                <NavDropdown.Item as={Link} to="/about">About</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to="/contract">
-                                    Contract
-                                </NavDropdown.Item>
-
-
-                            </NavDropdown>
-                        </Nav>
-                        <Nav>
-                            <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                            <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
 
                         </Nav>
+                        {
+                            user ? <button onClick={handelSignOut} className={"btn btn-outline-warning text-dark fw-bolder"}>Sign Out</button> : <Nav.Link className={"btn btn-outline-warning text-dark fw-bolder"} as={Link} to="/login">Login</Nav.Link>
+                        }
+
+
+
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
