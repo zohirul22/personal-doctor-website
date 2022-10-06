@@ -18,7 +18,7 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" className='header' variant="dark" sticky="top"  >
+            <Navbar collapseOnSelect expand="lg" className='header' variant="dark" fixed="top"  >
                 <Container>
                     <Navbar.Brand as={Link} to="/home">
                         <img src={logo} alt="" />
@@ -44,7 +44,7 @@ const Header = () => {
 
                         </Nav>
                         {
-                            user ? <button onClick={handelSignOut} className={"btn btn-outline-warning text-dark fw-bolder"}>Sign Out</button> : <Nav.Link className={"btn btn-outline-warning text-dark fw-bolder"} as={Link} to="/login">Login</Nav.Link>
+                            user ? <button onClick={handelSignOut} className={"btn p-2 btn-outline-warning text-dark fw-bolder"}>Sign Out</button> : <Nav.Link className={"btn p-2 btn-outline-warning text-dark fw-bolder"} as={Link} to="/login">Login</Nav.Link>
                         }
 
 

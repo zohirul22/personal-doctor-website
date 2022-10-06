@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { navigate, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import TittlePage from '../../TittlePage/TittlePage';
 import SocialPage from '../SocialPage/SocialPage';
 import './SignUp.css'
 
@@ -77,6 +78,7 @@ const SignUp = () => {
 
                 </Form>
                 <SocialPage></SocialPage>
+                <TittlePage title="SignUp"></TittlePage>
             </div>
         </div>
     );

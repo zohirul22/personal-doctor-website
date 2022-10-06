@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 import SocialPage from '../SocialPage/SocialPage';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TittlePage from '../../TittlePage/TittlePage';
 
 
 const Login = () => {
@@ -55,6 +56,8 @@ const Login = () => {
     }
 
     return (
+     
+
         <div className='signup'>
             <div className="mx-auto w-50 signup-from ">
                 <h1 className='text-center text-success my-4'>Please  Login</h1>
@@ -82,6 +85,7 @@ const Login = () => {
                 </Form>
                 <SocialPage></SocialPage>
                 <ToastContainer />
+                <TittlePage title="Login"></TittlePage>
             </div>
         </div>
     );

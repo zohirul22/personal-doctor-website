@@ -7,10 +7,13 @@ import imgFrist from '../../../src/img/about/services/frist.png'
 import imgSecond from '../../../src/img/about/services/second.png'
 import imgFourth from '../../../src/img/about/services/fourth.png'
 import Footer from '../Footer/Footer';
+import TittlePage from '../../TittlePage/TittlePage';
 
 const About = () => {
+   
     return (
         <div>
+             <TittlePage title="About"></TittlePage>
             {/* carusol setup */}
             <div className="">
                 <Carousel>
