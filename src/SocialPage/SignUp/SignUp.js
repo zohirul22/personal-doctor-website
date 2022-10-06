@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { navigate, useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ import './SignUp.css'
 
 const SignUp = () => {
 
+    const [agree, setAgree] = useState(false);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -17,13 +18,13 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
- const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const handelSubmittedLogin = () => {
         navigate('/login')
     }
 
- 
+
     const handelSignUp = async (event) => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -56,15 +57,23 @@ const SignUp = () => {
 
                         <Form.Control type="password" name='password' placeholder="Password" required />
                     </Form.Group>
-                    <Form.Group className="mb-3 w-75 mx-auto" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Group
+                        className="mb-3 w-75 mx-auto" controlId="formBasicCheckbox">
+                        <Form.Check
+                            onClick={() => setAgree(!agree)}
+                            className={agree ? 'text-primary' : 'text-danger'}
+                            type="checkbox"
+                            label="Terms and Condition" />
                     </Form.Group>
-                    <Button variant="primary mb-2 mx-auto d-block w-50 btn-design" type="submit">
+                    <Button
+                        disabled={!agree}
+                        variant="primary mb-2 mx-auto d-block w-50 btn-design"
+                        type="submit">
                         Sign Up
                     </Button>
-                    <p className='text-center'>Already account ?
+                    <p className='text-center account'>Already account ?
                         <span onClick={handelSubmittedLogin}
-                            className='btn-navigate text-danger'>Please Login</span></p>
+                            className='btn-navigate text-danger '>Please Login</span></p>
 
                 </Form>
                 <SocialPage></SocialPage>

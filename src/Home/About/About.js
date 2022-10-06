@@ -6,6 +6,7 @@ import img1 from '../../../src/img/about/about-img.jpg';
 import imgFrist from '../../../src/img/about/services/frist.png'
 import imgSecond from '../../../src/img/about/services/second.png'
 import imgFourth from '../../../src/img/about/services/fourth.png'
+import Footer from '../Footer/Footer';
 
 const About = () => {
     return (
@@ -15,8 +16,8 @@ const About = () => {
                 <Carousel>
                     <Carousel.Item>
                         <img
-                     
-                             style={{ height: '450px' }}
+
+                            style={{ height: '450px' }}
                             className="d-block w-100"
                             src={bannar1}
                             alt="First slide"
@@ -111,6 +112,7 @@ const About = () => {
             </div>
             {/* Ours services mission  End */}
 
+            <Footer></Footer>
 
         </div>
     );

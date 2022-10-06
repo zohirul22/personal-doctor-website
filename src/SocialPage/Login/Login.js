@@ -40,12 +40,12 @@ const Login = () => {
 
     const resetPassword = async () => {
         const email = emailRef.current.value;
-     
+
         if (email) {
             await sendPasswordResetEmail(email);
             toast('Sent email');
         }
-        else{
+        else {
             toast('Please your email')
         }
     }
@@ -73,11 +73,11 @@ const Login = () => {
                     </Button>
                     <p className='text-center'>Visited Our website ?
                         <span onClick={navigateRegister}
-                            className='btn-navigate text-danger'>Please Register</span></p>
+                            className='btn-navigate text-danger account'>Please Register</span></p>
                     <p className='text-center'>Forget Password?
                         <span
                             onClick={resetPassword}
-                            className='btn-navigate text-danger'>Reset Password</span></p>
+                            className='btn-navigate text-danger account'>Reset Password</span></p>
 
                 </Form>
                 <SocialPage></SocialPage>

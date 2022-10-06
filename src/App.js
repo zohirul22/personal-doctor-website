@@ -3,13 +3,14 @@ import './App.css';
 import About from './Home/About/About';
 import Contract from './Home/Contract/Contract';
 import Header from './Home/Header/Header';
-import Footer from './Home/Footer/Footer';
+
 import Home from './Home/Home/Home';
 import Login from './SocialPage/Login/Login';
 import SignUp from './SocialPage/SignUp/SignUp';
 
 
 function App() {
+
   return (
     <div>
       <Header></Header>
@@ -21,7 +22,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>
-      <Footer></Footer>
+   
     </div>
   );
 }
