@@ -20,7 +20,7 @@ const Login = () => {
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
-    const navigate = useNavigate();
+   const navigate = useNavigate();
 
     const handelLogin = (event) => {
         event.preventDefault();
@@ -38,7 +38,7 @@ const Login = () => {
         componentsError = <p className='text-danger text-center'>Error: {error.message}  </p>
     }
 
-    const resetPassword = async () => {
+    const resetPassword = async (event) => {
         const email = emailRef.current.value;
 
         if (email) {
@@ -61,7 +61,7 @@ const Login = () => {
                 <Form onSubmit={handelLogin}>
                     <Form.Group className="mb-3 w-75 mx-auto" controlId="formBasicPassword">
 
-                        <Form.Control type="email" name='email' placeholder="Enter email.." required ref={emailRef} />
+                        <Form.Control type="email" name='email' placeholder="Enter email.." required  ref={emailRef} />
                     </Form.Group>
                     <Form.Group className="mb-3 w-75 mx-auto" controlId="formBasicPassword">
 
@@ -73,11 +73,11 @@ const Login = () => {
                     </Button>
                     <p className='text-center'>Visited Our website ?
                         <span onClick={navigateRegister}
-                            className='btn-navigate text-danger account'>Please Register</span></p>
-                    <p className='text-center'>Forget Password?
+                            className='btn-navigate text-danger account'> Please Register</span></p>
+                    <p className='text-center'>Forget Password ?
                         <span
                             onClick={resetPassword}
-                            className='btn-navigate text-danger account'>Reset Password</span></p>
+                            className='btn-navigate text-danger account'> Reset Password</span></p>
 
                 </Form>
                 <SocialPage></SocialPage>

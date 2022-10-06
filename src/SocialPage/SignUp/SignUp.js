@@ -73,7 +73,7 @@ const SignUp = () => {
                     </Button>
                     <p className='text-center account'>Already account ?
                         <span onClick={handelSubmittedLogin}
-                            className='btn-navigate text-danger '>Please Login</span></p>
+                            className='btn-navigate text-danger '> Please Login</span></p>
 
                 </Form>
                 <SocialPage></SocialPage>
